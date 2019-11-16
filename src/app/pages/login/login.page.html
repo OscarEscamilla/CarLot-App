@@ -1,30 +1,36 @@
-<ion-header>
-  <ion-toolbar color="primary">
-      <ion-title>Default Buttons</ion-title>
-        
-      <ion-icon  class="ion-margin-start" slot="start" style="zoom:2.0;" name="person"></ion-icon>
-          
-    
-  </ion-toolbar>
-</ion-header>
 
-<ion-content >
-  <div  class="ion-margin">
-    <ion-button color="primary" routerLink="/tabs/tab1">
-      ir a las tabs
-    </ion-button>
-    <ion-item class="ion-ion-margin-bottom">
-      <ion-label position="floating">Email</ion-label>
-      <ion-input></ion-input>
+
+<ion-content class="ion-padding">
+    <img src="assets/img/car.png" alt="">
+    
+    <ion-item class="ion-margin-top">
+      <ion-label position="stacked" color="secondary">EMAIL</ion-label>
+      <ion-input type="text"  [(ngModel)]="email" name="email" autofocus="false"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-label position="floating">Password</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
-    <ion-button expand="block" color="google">
-      Sign in with Google <ion-icon class="ion-margin" name="logo-googleplus"></ion-icon>
+    <ion-item class="ion-margin-top ion-margin-bottom" >
+      <ion-label position="stacked" color="secondary">PASSWORD</ion-label>
+      <ion-input type="password"  [(ngModel)]="password"  name="password" ></ion-input>
+    </ion-item >
+    <br>
+    <br>
+    <br>
+    <ion-button (click)="onSubmitLogin()" expand="block" color="primary">
+        Sign in
     </ion-button>
-  </div>
+    <br>
+    <ion-button expand="block" color="facebook">
+        Sign in with facebook
+        <ion-icon color="light" name="logo-facebook"></ion-icon>
+    </ion-button>
+    <br>
+    <div class="ion-text-center">
+      <ion-label  class="text-center" color="medium">¿No tienes una cuenta? <a href="" routerLink="/registrouser">Registrate</a></ion-label>  
+    </div>
+   
+   
+    
+    
+
 </ion-content>
 
 

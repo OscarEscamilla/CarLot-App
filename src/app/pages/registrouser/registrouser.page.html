@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Registro
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-text class="ion-margin-top" class="ion-text-center">
+
+      <h3 color="primary">text-center</h3>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
+    
+  </ion-text>
+  <br>
+  <form (ngSubmit)="logForm()">
+    <ion-item class="ion-margin-top">
+      <ion-label position="stacked" color="secondary">NOMBRE</ion-label>
+      <ion-input type="text"  [(ngModel)]="todo.email" name="email"></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin-top">
+        <ion-label position="stacked" color="secondary">APELLIDO PATERNO</ion-label>
+        <ion-input type="text"  [(ngModel)]="todo.ape_pat" name="ape_pat"></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin-top">
+        <ion-label position="stacked" color="secondary">APELLIDO MATERNO</ion-label>
+        <ion-input type="text"  [(ngModel)]="todo.ape_mat" name="ape_mat"></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin-top">
+        <ion-label position="stacked" color="secondary">TELEFONO</ion-label>
+        <ion-input type="tel"  [(ngModel)]="todo.telefono" name="telefono"></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin-top">
+        <ion-label position="stacked" color="secondary">EMAIL</ion-label>
+        <ion-input type="email"  [(ngModel)]="todo.correo" name="correo"></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin-top">
+        <ion-label position="stacked" color="secondary">PASSWORD</ion-label>
+        <ion-input type="password"  [(ngModel)]="todo.password" name="password"></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin-top">
+        <ion-label position="stacked" color="dark">CONFIRMA TU CONTRASEÑA</ion-label>
+        <ion-input type="password"  [(ngModel)]="todo.password" name="password"></ion-input>
+    </ion-item>
+    <br>
+    <p color="medium" class="ion-text-justify">Al hacer clic en "Registrarte", aceptas nuestras Condiciones, la Política de datos y la Política de cookies. Es posible que te enviemos notificaciones por SMS, que puedes desactivar cuando quieras.</p>
+    <ion-button expand="block" color="primary" type="submit">
+        Finalizar Registro
+        <!--Basic: auto-select the icon based on the platform -->
+        <ion-icon slot="end" name="checkmark-circle"></ion-icon>
+    </ion-button>
+  </form>
+
+</ion-content>
