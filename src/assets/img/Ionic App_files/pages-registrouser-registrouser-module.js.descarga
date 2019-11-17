@@ -1,0 +1,111 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["pages-registrouser-registrouser-module"],{
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/pages/registrouser/registrouser.page.html":
+/*!*************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/pages/registrouser/registrouser.page.html ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-header>\n  <ion-toolbar color=\"secondary\">\n    <ion-buttons slot=\"start\">\n      <ion-back-button defaultHref=\"/login\"></ion-back-button>\n    </ion-buttons>\n    <ion-title>\n      Registro \n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n<ion-content class=\"ion-padding\">\n\n  <ion-text class=\"ion-margin-top ion-text-center\" color=\"dark\">\n    <h1>Bienvenido a Car Lot<ion-icon name=\"car\"></ion-icon></h1>\n  </ion-text>\n  <ion-text class=\"ion-text-center\" color=\"secondary\">\n    Registrate y obten grandes beneficios por ser usuario de Car Lot\n  </ion-text>\n\n  <br>\n  <br>\n\n  <form (ngSubmit)=\"logForm()\">\n    <ion-row>\n      <ion-col size=\"6\">\n        <ion-item class=\"ion-margin-top\">\n          <ion-label position=\"stacked\" color=\"primary\"><ion-icon name=\"person\"></ion-icon> NOMBRE</ion-label>\n          <ion-input type=\"text\"  [(ngModel)]=\"todo.email\" name=\"email\"></ion-input>\n        </ion-item>\n      </ion-col>\n      <ion-col size=\"6\">\n          <ion-item class=\"ion-margin-top\">\n              <ion-label position=\"stacked\" color=\"primary\">APELLIDO</ion-label>\n              <ion-input type=\"text\"  [(ngModel)]=\"todo.apellido\" name=\"apellido\"></ion-input>\n          </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-item class=\"ion-margin-top\">\n        \n        <ion-label position=\"stacked\" color=\"primary\"><ion-icon name=\"phone-portrait\"></ion-icon> TELEFONO</ion-label>\n        <ion-input type=\"tel\"  [(ngModel)]=\"todo.telefono\" name=\"telefono\"></ion-input>\n    </ion-item>\n    <ion-item class=\"ion-margin-top\">\n        <ion-label position=\"stacked\" color=\"primary\"> <ion-icon name=\"mail\"></ion-icon> EMAIL</ion-label>\n        <ion-input type=\"email\"  [(ngModel)]=\"todo.correo\" name=\"correo\"></ion-input>\n    </ion-item>\n    <ion-item class=\"ion-margin-top\">\n        <ion-label position=\"stacked\" color=\"primary\"><ion-icon name=\"lock\"></ion-icon> PASSWORD</ion-label>\n        <ion-input type=\"password\"  [(ngModel)]=\"todo.password\" name=\"password\"></ion-input>\n    </ion-item>\n    <br>\n    <ion-text color=\"medium\">\n      <div  class=\"ion-text-justify\" id=\"terminos\" >\n          Al hacer clic en \"Registrarte\", aceptas nuestras Condiciones, la Política de datos y la Política de cookies. Es posible que te enviemos notificaciones por SMS, que puedes desactivar cuando quieras.\n      </div> \n    </ion-text>\n    <br>\n    <br>\n    <ion-button expand=\"block\" color=\"primary\" type=\"submit\">\n        Finalizar Registro\n        <!--Basic: auto-select the icon based on the platform -->\n        <ion-icon slot=\"end\" name=\"checkmark-circle\"></ion-icon>\n    </ion-button>\n  </form>\n\n  \n\n</ion-content>\n\n "
+
+/***/ }),
+
+/***/ "./src/app/pages/registrouser/registrouser.module.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/pages/registrouser/registrouser.module.ts ***!
+  \***********************************************************/
+/*! exports provided: RegistrouserPageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegistrouserPageModule", function() { return RegistrouserPageModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _registrouser_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./registrouser.page */ "./src/app/pages/registrouser/registrouser.page.ts");
+
+
+
+
+
+
+
+const routes = [
+    {
+        path: '',
+        component: _registrouser_page__WEBPACK_IMPORTED_MODULE_6__["RegistrouserPage"]
+    }
+];
+let RegistrouserPageModule = class RegistrouserPageModule {
+};
+RegistrouserPageModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonicModule"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forChild(routes)
+        ],
+        declarations: [_registrouser_page__WEBPACK_IMPORTED_MODULE_6__["RegistrouserPage"]]
+    })
+], RegistrouserPageModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/registrouser/registrouser.page.scss":
+/*!***********************************************************!*\
+  !*** ./src/app/pages/registrouser/registrouser.page.scss ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "#terminos {\n  font-size: 0.5em !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvcmVnaXN0cm91c2VyL0M6XFxVc2Vyc1xcT3NjYXIgRXNjYW1pbGxhXFxEb2N1bWVudHNcXHByb2plY3RzX2pzXFxQYXJrQXBwL3NyY1xcYXBwXFxwYWdlc1xccmVnaXN0cm91c2VyXFxyZWdpc3Ryb3VzZXIucGFnZS5zY3NzIiwic3JjL2FwcC9wYWdlcy9yZWdpc3Ryb3VzZXIvcmVnaXN0cm91c2VyLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLDJCQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9yZWdpc3Ryb3VzZXIvcmVnaXN0cm91c2VyLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiN0ZXJtaW5vc3tcclxuICAgIGZvbnQtc2l6ZTogMC41ZW0gIWltcG9ydGFudDtcclxufSIsIiN0ZXJtaW5vcyB7XG4gIGZvbnQtc2l6ZTogMC41ZW0gIWltcG9ydGFudDtcbn0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/pages/registrouser/registrouser.page.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/pages/registrouser/registrouser.page.ts ***!
+  \*********************************************************/
+/*! exports provided: RegistrouserPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegistrouserPage", function() { return RegistrouserPage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let RegistrouserPage = class RegistrouserPage {
+    constructor() {
+        this.todo = {};
+    }
+    ngOnInit() {
+    }
+    logForm() {
+        console.log(this.todo);
+    }
+};
+RegistrouserPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-registrouser',
+        template: __webpack_require__(/*! raw-loader!./registrouser.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/registrouser/registrouser.page.html"),
+        styles: [__webpack_require__(/*! ./registrouser.page.scss */ "./src/app/pages/registrouser/registrouser.page.scss")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+], RegistrouserPage);
+
+
+
+/***/ })
+
+}]);
+//# sourceMappingURL=pages-registrouser-registrouser-module.js.map
