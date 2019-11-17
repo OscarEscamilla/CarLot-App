@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrouserPage implements OnInit {
 
-  todo = {};
+  registro = {};
 
   constructor() { }
 
@@ -15,7 +15,7 @@ export class RegistrouserPage implements OnInit {
   }
 
   logForm() {
-    console.log(this.todo);
+    console.log(this.registro[0]);
   }
 
 }
