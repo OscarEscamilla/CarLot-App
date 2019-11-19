@@ -22,24 +22,20 @@
            
         </ion-card-content>
     </ion-card>
-    <ion-card>
-        <img src="assets/img/esta.png" alt="">
+    <ion-card *ngFor="let user of users" class="ion-padding">
+        <p>{{user.correo}}</p>
+        <p>{{user.password}}</p>
         
-        <ion-card-content>
-            <ion-card-title  color="primary">Nombre del Estacionamiento</ion-card-title>
-            <p>breve descripcion como horarios y tarifa</p>
-            <ion-card-subtitle>Hra $30.00</ion-card-subtitle>
-            
-        </ion-card-content>
-    </ion-card>
-    <ion-card>
-        <img src="assets/img/esta.png" alt="">
+        <ng-container *ngIf="user.image == ''; else elseTemplate">
+            <p>no tiene foto</p>
+        </ng-container>
+        <ng-template #elseTemplate>
+            <p>si tiene foto</p>
+        </ng-template>
         
-        <ion-card-content>
-            <ion-card-title color="primary">Nombre del Estacionamiento</ion-card-title>
-            <p>breve descripcion como horarios y tarifa</p>
-            <ion-card-subtitle>Hra $30.00</ion-card-subtitle>
-            
-        </ion-card-content>
     </ion-card>
+   
+    
+    
+    
 </ion-content>

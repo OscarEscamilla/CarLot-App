@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService} from '../../servicios/user.service';
+import { identifierModuleUrl } from '@angular/compiler';
+import { ɵangular_packages_platform_browser_platform_browser_d } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-registrouser',
@@ -7,15 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrouserPage implements OnInit {
 
-  registro = {};
+  user = {};
 
-  constructor() { }
+  person = {};
+
+ 
+
+  constructor(public userService: UserService) { }
 
   ngOnInit() {
   }
 
   logForm() {
-    console.log(this.registro[0]);
+    
   }
 
 }

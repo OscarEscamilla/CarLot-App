@@ -22,27 +22,27 @@
       <ion-col size="6">
         <ion-item class="ion-margin-top">
           <ion-label position="stacked" color="primary"><ion-icon name="person"></ion-icon> NOMBRE</ion-label>
-          <ion-input type="text"  [(ngModel)]="todo.nombre" name="nombre"></ion-input>
+          <ion-input type="text"  [(ngModel)]="person.nombre" name="nombre"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col size="6">
           <ion-item class="ion-margin-top">
               <ion-label position="stacked" color="primary">APELLIDO</ion-label>
-              <ion-input type="text"  [(ngModel)]="todo.apellido" name="apellido"></ion-input>
+              <ion-input type="text"  [(ngModel)]="person.apellido" name="apellido"></ion-input>
           </ion-item>
       </ion-col>
     </ion-row>
     <ion-item class="ion-margin-top">
         <ion-label position="stacked" color="primary"><ion-icon name="phone-portrait"></ion-icon> TELEFONO</ion-label>
-        <ion-input type="tel"  [(ngModel)]="todo.telefono" name="telefono"></ion-input>
+        <ion-input type="tel"  [(ngModel)]="person.telefono" name="telefono"></ion-input>
     </ion-item>
     <ion-item class="ion-margin-top">
         <ion-label position="stacked" color="primary"> <ion-icon name="mail"></ion-icon> EMAIL</ion-label>
-        <ion-input type="email"  [(ngModel)]="todo.correo" name="correo"></ion-input>
+        <ion-input type="email"  [(ngModel)]="user.correo" name="correo"></ion-input>
     </ion-item>
     <ion-item class="ion-margin-top">
         <ion-label position="stacked" color="primary"><ion-icon name="lock"></ion-icon> PASSWORD</ion-label>
-        <ion-input type="password"  [(ngModel)]="todo.password" name="password"></ion-input>
+        <ion-input type="password"  [(ngModel)]="user.password" name="password"></ion-input>
     </ion-item>
     <br>
     <ion-text color="medium">
