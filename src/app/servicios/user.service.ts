@@ -19,6 +19,6 @@ export class UserService {
   }
 
   addUser(user: any ) {
-      return this.httpClient.post('http://carlotapinode.herokuapp.com/addUser', user);
+      return this.httpClient.post('http://carlotapinode.herokuapp.com/registroUsuario', user);
   }
 }

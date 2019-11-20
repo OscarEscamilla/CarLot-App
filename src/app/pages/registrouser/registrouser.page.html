@@ -17,24 +17,24 @@
   </ion-text>
   <br>
   <br>
-  <form (ngSubmit)="logForm()">
+  <form (ngSubmit)="presentAlertUserType()">
     <ion-row>
       <ion-col size="6">
         <ion-item class="ion-margin-top">
           <ion-label position="stacked" color="primary"><ion-icon name="person"></ion-icon> NOMBRE</ion-label>
-          <ion-input type="text"  [(ngModel)]="person.nombre" name="nombre"></ion-input>
+          <ion-input type="text"  [(ngModel)]="user.nombre" name="nombre"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col size="6">
           <ion-item class="ion-margin-top">
               <ion-label position="stacked" color="primary">APELLIDO</ion-label>
-              <ion-input type="text"  [(ngModel)]="person.apellido" name="apellido"></ion-input>
+              <ion-input type="text"  [(ngModel)]="user.apellido" name="apellido"></ion-input>
           </ion-item>
       </ion-col>
     </ion-row>
     <ion-item class="ion-margin-top">
         <ion-label position="stacked" color="primary"><ion-icon name="phone-portrait"></ion-icon> TELEFONO</ion-label>
-        <ion-input type="tel"  [(ngModel)]="person.telefono" name="telefono"></ion-input>
+        <ion-input type="tel"  [(ngModel)]="user.telefono" name="telefono"></ion-input>
     </ion-item>
     <ion-item class="ion-margin-top">
         <ion-label position="stacked" color="primary"> <ion-icon name="mail"></ion-icon> EMAIL</ion-label>
