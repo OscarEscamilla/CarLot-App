@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
 import {AuthService} from '../../servicios/auth.service';
 import { LoadingController , AlertController, ToastController } from '@ionic/angular';
-
+import { UserService } from '../../servicios/user.service';
 
 @Component({
   selector: 'app-login',
@@ -21,31 +21,41 @@ export class LoginPage implements OnInit {
     public router: Router,
     public loadingController: LoadingController,
     public alertController: AlertController,
-    public toastController: ToastController) {
+    public toastController: ToastController,
+    public userService: UserService ) {
   }
 
   ngOnInit() {
   }
 
-  async onSubmitLogin(){
-    const result = await this.authService.login(this.email, this.password)
-    .then(res =>{
-      this.presentLoadingWithOptions();
-      this.router.navigate(['/tabs/tab1']);
-    }).catch(err => {
-      this.presentToast();
-    });
+
+  async onSubmitLogin() {
+    const data = {
+      'correo': this.email,
+      'password': this.password
+    };
+    this.presentLoading();
+    const result = await this.userService.validateLogin(data).subscribe(
+        (res) => {
+          if (res != null) {
+            this.router.navigate(['/tabs/tab1']);
+          } else {
+            this.presentToast();
+          }
+        }
+      );
   }
 
-  async presentLoadingWithOptions() {
+  async presentLoading() {
     const loading = await this.loadingController.create({
-      spinner: null,
-      duration: 5000,
-      message: 'Please wait...',
-      translucent: true,
-      cssClass: 'custom-class custom-loading'
+      message: 'Loading...',
+      duration: 2000
     });
-    return await loading.present();
+    await loading.present();
+
+    const { role, data } = await loading.onDidDismiss();
+
+    console.log('Loading dismissed!');
   }
 
   async presentToast() {

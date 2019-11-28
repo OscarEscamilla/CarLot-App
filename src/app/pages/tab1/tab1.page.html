@@ -1,8 +1,12 @@
 <ion-toolbar color="secondary">
     <ion-title> Parkone</ion-title>
+    <ion-buttons slot="primary">
+        <ion-button color="" (click)="presentActionSheet()">
+        <ion-icon slot="icon-only" name="more"></ion-icon>
+        </ion-button>
+    </ion-buttons>
 </ion-toolbar>
- 
-<ion-content padding>
+<ion-content class="ion-padding">
     
     <ion-text color="secondary">
         <h3>Estacionamientos mejor calificados</h3>
@@ -35,6 +39,7 @@
         
     </ion-card>
 
+        
    
     
     

@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'detallepark', loadChildren: './pages/detallepark/detallepark.module#DetalleparkPageModule' },
   { path: 'registrouser', loadChildren: './pages/registrouser/registrouser.module#RegistrouserPageModule' },
   { path: 'registroparkr', loadChildren: './pages/registroparkr/registroparkr.module#RegistroparkrPageModule' },
+  { path: 'perfil-park', loadChildren: './pages/perfil-park/perfil-park.module#PerfilParkPageModule' },
 ];
 
 @NgModule({

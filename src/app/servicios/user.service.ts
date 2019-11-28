@@ -21,4 +21,14 @@ export class UserService {
   addUser(user: any ) {
       return this.httpClient.post('http://carlotapinode.herokuapp.com/registroUsuario', user);
   }
+
+  registroParks(park: any){
+    return this.httpClient.post('http://carlotapinode.herokuapp.com/registroParks', park);
+  }
+
+  validateLogin(data: any ) {
+    return this.httpClient.post('http://carlotapinode.herokuapp.com/login', data);
+}
+
+  
 }

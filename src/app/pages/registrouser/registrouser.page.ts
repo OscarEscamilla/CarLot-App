@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService} from '../../servicios/user.service';
-import { identifierModuleUrl } from '@angular/compiler';
-import { ɵangular_packages_platform_browser_platform_browser_d } from '@angular/platform-browser';
 
 
 import { Router } from '@angular/router';
@@ -14,9 +12,12 @@ import { LoadingController , AlertController, ToastController} from '@ionic/angu
 })
 export class RegistrouserPage implements OnInit {
 
+
+  togle = false;
+
   user = {
-    "id": 0,
-    "rol": "0"
+    id: "0",
+    rol: "",
   };
 
   result: any;
@@ -28,32 +29,40 @@ export class RegistrouserPage implements OnInit {
     public alertController: AlertController,
     public toastController: ToastController
     ) { }
-
+ 
   ngOnInit() {
   }
 
-  addRegistro(rol: string){
-
-    this.user.id = 0;
-    this.user.rol = rol;
-    console.log('objeto obtenido', this.user);
-    if(rol == '0'){
+  addUser(){
+    try {
+      this.user.rol = '0';
+      console.log('objeto obtenido', this.user);
       this.presentLoading();
       this.userService.addUser(this.user).subscribe(
         (user) => {
           this.result = user;
-          if(this.result.Status === 'Usuario Registrado') {
+          if (this.result.Status === 'Usuario Registrado') {
             this.presentToast('¡Bienvenido! ahora puede ingresar', 3000);
             this.router.navigate(['/login']);
-          }else{
+          } else {
             this.presentToast('¡Ha ocurrido un error!', 2000);
           }
         }
       );
-    }else{
-      this.router.navigate(['/registroparkr']);
+    } catch (error) {
+      this.presentToast('¡Ha ocurrido un error!', 2000);
     }
- }
+  }
+
+
+  addPark(){
+    try {
+      this.user.rol = '1';
+      console.log('objeto obtenido', this.user);
+    } catch (error) {
+      this.presentToast('¡Ha ocurrido un error! addPark', 2000);
+    }
+  }
 
  async presentToast(mensaje: string, duracion: number) {
   const toast = await this.toastController.create({
@@ -79,20 +88,21 @@ export class RegistrouserPage implements OnInit {
   async presentAlertUserType() {
     const alert = await this.alertController.create({
       header: 'Usuario S-Park',
-      message: '<strong>¿En que tipo de usuario desea registrarse?</strong>',
+      message: '¿Como desea registrarse?',
       buttons: [
         {
           text: 'Usuario',
-          role: 'cancel',
           cssClass: 'secondary',
-          handler: (blah) => {
-           this.addRegistro("0");
+          handler: () => {
+            // llama la funcion de agregar usuario comun
+           this.addUser();
           }
         }, {
           text: 'Estacionamiento',
           cssClass: 'secondary',
           handler: () => {
-            this.addRegistro("1");
+            // llama la funcion de agregar estacionamientos
+            this.addPark();
           }
         }
       ]
@@ -100,5 +110,5 @@ export class RegistrouserPage implements OnInit {
 
     await alert.present();
   }
-
+  
 }
