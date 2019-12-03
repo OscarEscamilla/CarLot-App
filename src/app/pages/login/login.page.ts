@@ -26,30 +26,32 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
 
   async onSubmitLogin() {
+
+    
+
     const data = {
       'correo': this.email,
       'password': this.password
     };
     this.presentLoading();
-    const result = await this.userService.validateLogin(data).subscribe(
-        (res) => {
-          if (res != null) {
-            this.router.navigate(['/tabs/tab1']);
-          } else {
-            this.presentToast();
-          }
-        }
-      );
+    this.userService.validateLogin(data).subscribe(
+      async (res) => {
+        const result = res;
+        await localStorage.setItem('user', JSON.stringify(result));
+        this.router.navigate(['/tabs/tab4']);
+      }
+    );
   }
 
   async presentLoading() {
     const loading = await this.loadingController.create({
       message: 'Loading...',
-      duration: 2000
+      duration: 3000
     });
     await loading.present();
 

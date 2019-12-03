@@ -1,6 +1,6 @@
 
 <ion-toolbar color="secondary">
-    <ion-title> Parkone</ion-title>
+    <ion-title> Profile</ion-title>
     <ion-buttons slot="primary">
         <ion-button color="" (click)="presentActionSheet()">
         <ion-icon slot="icon-only" name="more"></ion-icon>
@@ -9,7 +9,21 @@
 </ion-toolbar>
 
 
-<ion-content>
-    
-
+<ion-content class="ion-no-padding">
+    <ion-card color="secondary" class="" >
+        <br>
+        <ion-avatar class="avatar">
+            <img src="{{data_user.image}}">
+        </ion-avatar>
+        <ion-text  color="light" class="ion-text-center">
+           <h4>{{data_user.nombre}} {{data_user.apellido}}</h4>
+        </ion-text>
+        <ion-text  color="medium" class="ion-text-center">
+            <p>{{data_user.correo}}</p>
+        </ion-text>
+    </ion-card>
+       
+    <ion-card>
+        
+    </ion-card>
 </ion-content>
