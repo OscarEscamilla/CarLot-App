@@ -23,26 +23,30 @@ export class LoginPage implements OnInit {
     public alertController: AlertController,
     public toastController: ToastController,
     public userService: UserService ) {
+
   }
 
   ngOnInit() {
 
+    //console.log(document.getElementById('pass'));
+
   }
 
 
-  async onSubmitLogin() {
+  async onSubmitLogin(correo, password) {
 
     
 
     const data = {
-      'correo': this.email,
-      'password': this.password
+      'correo': correo.value,
+      'password': password.value
     };
     this.presentLoading();
     this.userService.validateLogin(data).subscribe(
       async (res) => {
         const result = res;
         await localStorage.setItem('user', JSON.stringify(result));
+        password.value = "";
         this.router.navigate(['/tabs/tab4']);
       }
     );

@@ -18,11 +18,13 @@ export class Tab4Page implements OnInit {
     private authService: AuthService,
     private alertController: AlertController,
     private actionSheetController: ActionSheetController,
-    public router: Router) { }
+    public router: Router) {
+      this.data_user = JSON.parse(localStorage.getItem('user'));
+      console.log(this.data_user);
+    }
 
   ngOnInit() {
-    this.data_user = JSON.parse(localStorage.getItem('user'));
-    console.log(this.data_user);
+    
   }
 
 

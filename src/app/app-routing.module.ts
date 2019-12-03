@@ -14,7 +14,6 @@ const routes: Routes = [
     { path: 'tab4', loadChildren: './pages/tab4/tab4.module#Tab4PageModule' },
   { path: 'detallepark', loadChildren: './pages/detallepark/detallepark.module#DetalleparkPageModule' },
   { path: 'registrouser', loadChildren: './pages/registrouser/registrouser.module#RegistrouserPageModule' },
-  { path: 'registroparkr', loadChildren: './pages/registroparkr/registroparkr.module#RegistroparkrPageModule' },
   { path: 'perfil-park', loadChildren: './pages/perfil-park/perfil-park.module#PerfilParkPageModule' },
 ];
 

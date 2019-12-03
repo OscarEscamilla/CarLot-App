@@ -23,5 +23,8 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+    if(localStorage.getItem('user')){
+      console.log('ya esta logueado');
+    }
   }
 }
