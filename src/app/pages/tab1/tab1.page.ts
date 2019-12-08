@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService} from '../../servicios/user.service';
 import { ActionSheetController } from '@ionic/angular';
 import { Router } from '@angular/router';
-
+import { ParkService } from '../../servicios/park.service';
 
 @Component({
   selector: 'app-tab1',
@@ -12,13 +12,14 @@ import { Router } from '@angular/router';
 export class Tab1Page implements OnInit {
 
 
-  public users: any;
- 
+  public parks: any;
+
 
   constructor(
     protected userService: UserService,
     public actionSheetController: ActionSheetController,
-    public router: Router) { }
+    public router: Router,
+    public parkService: ParkService) { }
 
   ngOnInit() {
     this.ongetUsers();
@@ -26,15 +27,12 @@ export class Tab1Page implements OnInit {
 
   ongetUsers() {
 
-    this.userService.getUsers().subscribe(
+    this.parkService.getParks().subscribe(
       (data) => {
         console.log(data);
-        this.users = data;
-      },
-      (error) => {
-        console.log(error);
+        this.parks = data;
       }
-    );
+    ); 
   }
 
 

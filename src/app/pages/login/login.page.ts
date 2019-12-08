@@ -4,6 +4,7 @@ import { Router} from '@angular/router';
 import {AuthService} from '../../servicios/auth.service';
 import { LoadingController , AlertController, ToastController } from '@ionic/angular';
 import { UserService } from '../../servicios/user.service';
+import { isNullOrUndefined } from 'util';
 
 @Component({
   selector: 'app-login',
@@ -35,19 +36,23 @@ export class LoginPage implements OnInit {
 
   async onSubmitLogin(correo, password) {
 
-    
-
     const data = {
       'correo': correo.value,
       'password': password.value
     };
-    this.presentLoading();
+
     this.userService.validateLogin(data).subscribe(
       async (res) => {
-        const result = res;
-        await localStorage.setItem('user', JSON.stringify(result));
-        password.value = "";
-        this.router.navigate(['/tabs/tab4']);
+        if(!isNullOrUndefined(res)){
+          this.presentLoading();
+          const result = res;
+          await localStorage.setItem('user', JSON.stringify(result));
+          password.value = "";
+          this.router.navigate(['/tabs/tab4']);
+        }else{
+          this.presentToast();
+        }
+    
       }
     );
   }

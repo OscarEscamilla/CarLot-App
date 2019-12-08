@@ -8,6 +8,8 @@ export class ParkService {
 
   constructor(private httpClient: HttpClient) { }
 
-
+  public getParks(){
+    return this.httpClient.get('http://carlotapinode.herokuapp.com/getParks');
+  }
   
 }

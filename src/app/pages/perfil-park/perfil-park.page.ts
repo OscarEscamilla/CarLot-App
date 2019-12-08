@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-perfil-park',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilParkPage implements OnInit {
 
-  constructor() { }
+  private id: number;
+
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.id = this.activatedRoute.snapshot.params.id;
+    console.log(this.id);
   }
 
 }

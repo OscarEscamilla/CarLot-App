@@ -1,6 +1,6 @@
 
 <ion-toolbar color="secondary">
-    <ion-title> Profile</ion-title>
+    <ion-title>Profile</ion-title>
     <ion-buttons slot="primary">
         <ion-button color="" (click)="presentActionSheet()">
         <ion-icon slot="icon-only" name="more"></ion-icon>
@@ -10,6 +10,7 @@
 
 
 <ion-content class="ion-no-padding">
+    
     <ion-card color="secondary" class="" >
         <br>
         <ion-avatar class="avatar">
@@ -23,7 +24,43 @@
         </ion-text>
     </ion-card>
        
-    <ion-card>
-        
+    <ion-card class="ion-padding">
+        <p>Telefono: {{data_user.telefono}}</p>
     </ion-card>
+
+    
+    <ion-grid>
+        <ion-row align-items-center >
+            <ion-col >
+                <ion-card class="ion-no-margin ion-padding">
+                    <ion-buttons slot="primary">
+                        <ion-button color="" (click)="action()">
+                            <ion-icon slot="icon-only" name="paper"></ion-icon>
+                        </ion-button>
+                    </ion-buttons>
+                </ion-card>    
+            </ion-col>
+            <ion-col>
+                <ion-card class="ion-no-margin ion-padding">
+                    <ion-buttons slot="primary">
+                        <ion-button color="" (click)="action()">
+                                <ion-icon name="time" slot="icon-only"></ion-icon>
+                        </ion-button>
+                    </ion-buttons>
+                </ion-card>
+            </ion-col>
+            <ion-col>
+                <ion-card class="ion-no-margin ion-padding">
+                    <ion-buttons slot="primary">
+                        <ion-button color="" (click)="action()">
+                            <ion-icon slot="icon-only" name="paper" color="dark"></ion-icon>
+                        </ion-button>
+                    </ion-buttons>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    
+
+    
 </ion-content>
