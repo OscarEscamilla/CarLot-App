@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="secondary">
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/login"></ion-back-button>
     </ion-buttons>
@@ -10,10 +10,10 @@
 </ion-header>
 <ion-content class="ion-padding">
   <ion-text class="ion-margin-top ion-text-center" color="medium">
-    <h1>¡Bienvenido <br> a Park-One!</h1>
+    <h1>¡Bienvenido <br> a Car Lot!</h1>
   </ion-text>
   <ion-text class="ion-text-center centrar-text" color="secondary">
-    Registrate y conoce los grandes beneficios de ser usuario Park-One
+    Registrate y conoce los grandes beneficios de ser usuario Car-Lot
   </ion-text>
   <br>
   
@@ -45,16 +45,16 @@
         <ion-input type="password"  [(ngModel)]="user.password" name="password"></ion-input>
     </ion-item>
     <div class="ion-margin-top">
-      <ion-item color="light">
-        <ion-label color="medium">¿Desea registrarse como estacionamiento?</ion-label>
-        <ion-toggle [(ngModel)]="togle" name="togle" checked="false"></ion-toggle>
+      <ion-item color="light" class="ion-no-padding">
+        <ion-label class="text-registro" color="medium">Registrate como estacionamiento</ion-label>
+        <ion-toggle [(ngModel)]="togle" name="togle" checked="false" class="ion-no-margin-end"></ion-toggle>
       </ion-item>
     </div>
      
     <hr>
     <!--CAMPOS PARA ESTACIONAMIENTOS -->
     <div *ngIf="togle == true">
-        <ion-text class="ion-text-center centrar-text" color="secondary">
+        <ion-text class="ion-text-center centrar-text" color="secondary" >
           Porfavor complete la siguiente informacion sobre su Estacionamiento
         </ion-text>
         <ion-item class="ion-margin-top">
@@ -141,7 +141,7 @@
     <br>
     <ion-text color="medium">
       <div  class="ion-text-justify" id="terminos" >
-        Al seleccionar la opcion "Finalizar Registro", aceptas nuestras Condiciones y la Política de datos. Es posible que te enviemos notificaciones por SMS, que puedes desactivar cuando quieras.
+        Al seleccionar la opcion "Finalizar Registro", aceptas nuestras <a href="">Condiciones y la Política de datos</a>. Es posible que te enviemos notificaciones por SMS, que puedes desactivar cuando quieras.
       </div> 
     </ion-text>
     <br>

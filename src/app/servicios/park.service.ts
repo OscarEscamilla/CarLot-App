@@ -11,5 +11,10 @@ export class ParkService {
   public getParks(){
     return this.httpClient.get('http://carlotapinode.herokuapp.com/getParks');
   }
+
+
+  public getParkById(id: any) {
+    return this.httpClient.post('http://carlotapinode.herokuapp.com/getOnePark', id );
+  }
   
 }

@@ -11,7 +11,7 @@
 </ion-toolbar>
 
 <ion-content>
-  <img src="assets/img/esta.png" alt="">
+  <img src="" alt="">
   <div class="ion-padding">
     <ion-text color="primary">
       <h3>Estacionamiento Cuautemoc</h3>
@@ -46,7 +46,6 @@
       </ion-col>
       <ion-col size="6" class="ion-no-padding ion-no-margin">
         <ion-text color="secondary">
-          <ion-icon slot="" name="time"></ion-icon>
           <h5>horarios</h5> 
         </ion-text>
         <ion-text color="medium">
@@ -71,7 +70,7 @@
       </ion-col>
     </ion-row>
     <br>
-    <ion-button fill="outline"  expand="block" >Reservar</ion-button>
+    <ion-button fill="outline"  expand="block" [routerLink]="[ '/reservas']"  >Reservar</ion-button >
   </div>
   
 </ion-content>

@@ -1,37 +1,60 @@
-<ion-toolbar color="secondary">
-    <ion-title> Park-One</ion-title>
+<ion-toolbar color="primary">
+    <ion-title>Car Lot </ion-title>
+    <!--
+        <ion-buttons slot="primary">
+        <ion-button color="" (click)="presentActionSheet()">
+        <ion-icon slot="icon-only" name="more"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+
+    -->
+    
     <ion-buttons slot="primary">
+        <ion-button color="" (click)="ActionSheet()">
+            
+                <img class="avatar-toolbar" src="{{data_user.image}}">
+           
+        </ion-button>
         <ion-button color="" (click)="presentActionSheet()">
         <ion-icon slot="icon-only" name="more"></ion-icon>
         </ion-button>
     </ion-buttons>
 </ion-toolbar>
-<ion-content class="ion-padding">
+<ion-content class="ion-padding background">
     <!--
     <ion-text color="secondary">
         <h3>Estacionamientos mejor calificados</h3>
+         
     </ion-text>
     -->
-    <ion-button expand="block" [routerLink]="[ '/tabs/tab3']" >
+    <ion-button expand="block" [routerLink]="[ '/tabs/tab3']" color="primary" >
         ir al mapa
         <ion-icon name="pin" color="tabs"></ion-icon>
     </ion-button> 
-
-    
     <ion-row class="ion-no-padding ion-no-margin" *ngFor="let park of parks" >
         <ion-col size="12" class="ion-no-padding ion-no-margin" >
             
             
-            <ion-card routerLink="/perfil-park/{{park.id}}" class="ion-no-padding ion-no-margin ion-margin-top">
+            <ion-card routerLink="/detallepark/{{park.id}}" class="ion-no-padding ion-no-margin ion-margin-top" color="light">
 
                     <img src="{{park.image}}" alt="" id="img-park">
                     
                     <ion-card-content>
-                        <ion-card-title  color="primary">{{park.nombre_park}}</ion-card-title>
+                        <ion-text color="darkm">
+                            <h1>
+                                {{park.nombre_park}}
+                            </h1>
+                        </ion-text>
                         <p  class="description">{{park.descripcion}}</p>
-                        <ion-card-subtitle>Precio por hora:  ${{park.tarifa}}</ion-card-subtitle>
+                        <ion-card-subtitle>Precio por hora  ${{park.tarifa}}</ion-card-subtitle>
+                         
+                        <ion-text color="disponible">
+                            <ion-icon name="checkmark-circle" color="disponible"></ion-icon>
+                            Disponible
+                        </ion-text>
+                        
                         <br>
-                        <ion-icon name="heart"></ion-icon> 156
+                        <ion-icon name="heart" color="danger"></ion-icon> 156 <ion-icon name="heart-dislike" color="medium"></ion-icon> 20
                     </ion-card-content>
                 </ion-card>
                 

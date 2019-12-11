@@ -1,6 +1,9 @@
-<ion-toolbar color="secondary">
-    <ion-title>Map</ion-title>
+<ion-toolbar color="primary">
+    <ion-title>Mapa</ion-title>
     <ion-buttons slot="primary">
+        <ion-button color="" (click)="ActionSheet()">
+            <img class="avatar-toolbar" src="{{data_user.image}}">
+        </ion-button>
         <ion-button color="" (click)="presentActionSheet()">
         <ion-icon slot="icon-only" name="more"></ion-icon>
         </ion-button>
@@ -8,5 +11,6 @@
 </ion-toolbar>
 
 <ion-content class="ion-no-padding">
+    <ion-searchbar showCancelButton="focus"></ion-searchbar>
     <iframe class="ion-no-margin" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3747.398960661833!2d-98.40731438556047!3d20.07560272500796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d056f6f6f5f4af%3A0x83ae95ec39472ed5!2sUniversidad%20Tecnol%C3%B3gica%20De%20Tulancingo!5e0!3m2!1ses-419!2smx!4v1575767008005!5m2!1ses-419!2smx" width="300" height="480" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 </ion-content>

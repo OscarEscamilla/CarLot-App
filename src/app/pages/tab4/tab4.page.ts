@@ -59,7 +59,7 @@ export class Tab4Page implements OnInit {
 
   async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
-      header: 'Albums',
+      header: 'Options',
       buttons: [{
         text: 'Delete',
         role: 'destructive',
@@ -72,12 +72,6 @@ export class Tab4Page implements OnInit {
         icon: 'share',
         handler: () => {
           console.log('Share clicked');
-        }
-      }, {
-        text: 'Play (open modal)',
-        icon: 'arrow-dropright-circle',
-        handler: () => {
-          console.log('Play clicked');
         }
       }, {
         text: 'Log out',

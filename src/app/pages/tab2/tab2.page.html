@@ -1,6 +1,9 @@
-<ion-toolbar color="secondary">
-        <ion-title> Parkone</ion-title>
+<ion-toolbar color="primary">
+        <ion-title> Reservas</ion-title>
         <ion-buttons slot="primary">
+            <ion-button color="" (click)="ActionSheet()">
+                <img class="avatar-toolbar" src="{{data_user.image}}">
+            </ion-button>
             <ion-button color="" (click)="presentActionSheet()">
             <ion-icon slot="icon-only" name="more"></ion-icon>
             </ion-button>
